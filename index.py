@@ -68,8 +68,12 @@ async def login(data: Annotated[LoginForm, Form()], request: Request):
         return templates.TemplateResponse(
             request=request, name="login.html", context={"error": "The username doesn't exist. Try to sign up!"}
         )
-    response = RedirectResponse(url="/user", status_code=status.HTTP_303_SEE_OTHER)
-    response.set_cookie(key="user", value=data.username)
+    if profile["role"] == "user":
+        response = RedirectResponse(url="/user", status_code=status.HTTP_303_SEE_OTHER)
+        response.set_cookie(key="user", value=data.username)
+    if profile["role"] == "admin":
+        response = RedirectResponse(url="/admin", status_code=status.HTTP_303_SEE_OTHER)
+        response.set_cookie(key="user", value=data.username)
     return response
 
 @app.get("/user", response_class=HTMLResponse)
@@ -78,3 +82,15 @@ async def dashboard(request: Request):
     return templates.TemplateResponse(
         "userboard.html", {"request": request, "user_data": user_data}
     )
+@app.get("/admin", response_class=HTMLResponse)
+async def dashboard(request: Request):
+    user_data = request.cookies.get("user")
+    return templates.TemplateResponse(
+        "admin.html", {"request": request, "user_data": user_data}
+    )
+    
+@app.get("/logout", response_class=HTMLResponse)
+async def logout():
+    response = RedirectResponse(url="/", status_code=status.HTTP_303_SEE_OTHER) 
+    response.delete_cookie(key="user")
+    return response
