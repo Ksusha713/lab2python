@@ -72,7 +72,7 @@ async def login(data: Annotated[LoginForm, Form()], request: Request):
         return templates.TemplateResponse(
             request=request, name="login.html", context={"error": "The username doesn't exist. Try to sign up!"}
         )
-    if profile["role"] == "user":
+    if profile["role"] == "student":
         response = RedirectResponse(url="/user", status_code=status.HTTP_303_SEE_OTHER)
         response.set_cookie(key="user", value=data.username)
     if profile["role"] == "admin":
