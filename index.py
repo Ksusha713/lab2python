@@ -46,6 +46,10 @@ async def signup(data: Annotated[SignUpForm, Form()], request: Request):
         return templates.TemplateResponse(
             request=request, name="signup.html", context={"error": "Username is already taken!"}
         )
+    if len(data.password) < 8:
+        return templates.TemplateResponse(
+            request=request, name="signup.html", context={"error": "Password is too short!"}
+        )
     if data.password != data.repeat_password:
         return templates.TemplateResponse(
             request=request, name="signup.html", context={"error": "Passwords do not match!"}
