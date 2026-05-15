@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Delius&family=Delius+Swash+Caps&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap&family=Montserrat+Alternates:wght@500;700;800&family=Nunito:wght@400;600;700;800&display=swap');
 
 :root {
-    /* The Blue/Purple Palette */
-    --bg-light: #F0F4F8;       /* Very soft blue-grey for main background */
-    --sidebar-bg: #1F3A4C;     /* Deep Navy from your palette */
-    --primary-purple: #5E63C8; /* Main action color */
-    --primary-blue: #4F93BE;   /* Secondary elements */
-    --accent-cyan: #38CFFC;    /* Highlights and active states */
-    --accent-yellow: #FFD661;  /* Streaks and rewards */
-    --accent-pink: #E743CC;    /* Extra gamified pops */
+    /* The BeanLearn Organic Palette */
+    --bg-light: #F4F7F5;       /* Very light minty-grey background */
+    --sidebar-bg: #2C4638;     /* Deep Pine Green */
+    --primary-action: #5B8C6A; /* Vibrant organic green for buttons */
+    --secondary-action: #869D80; /* Soft Sage */
+    --accent-bean: #9bb24a;    /* Warm Earthy Orange/Brown */
+    --accent-yellow: #F4C453;  /* Bright Sun Yellow */
+    --accent-highlight: #A1D0B0; /* Light Mint */
     
-    --text-dark: #2B3A4A;
-    --text-muted: #9CADBC;
+    --text-dark: #243029;      /* Dark Pine for readability */
+    --text-muted: #829488;     /* Muted Sage */
     --white: #FFFFFF;
 }
 
@@ -47,24 +47,24 @@ h1, h2, h3 {
 }
 
 .btn-primary {
-    background-color: var(--primary-purple);
+    background-color: var(--primary-action);
     color: var(--white);
     box-shadow: 0 4px 15px rgba(94, 99, 200, 0.3);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    background-color: #4C51A8;
+    background-color: #4ca863;
 }
 
 .btn-outline {
     background-color: transparent;
-    color: var(--primary-purple);
-    border: 2px solid var(--primary-purple);
+    color: var(--primary-action);
+    border: 2px solid var(--primary-action);
 }
 
 .btn-outline:hover {
-    background-color: var(--primary-purple);
+    background-color: var(--primary-action);
     color: var(--white);
 }
 
@@ -86,7 +86,7 @@ h1, h2, h3 {
 .landing-nav .logo {
     font-size: 24px;
     font-weight: 800;
-    color: var(--primary-purple);
+    color: var(--primary-action);
     font-family: 'Montserrat Alternates', sans-serif;
 }
 
@@ -99,7 +99,7 @@ h1, h2, h3 {
 }
 
 .nav-links a:hover {
-    color: var(--primary-purple);
+    color: var(--primary-action);
 }
 
 .hero {
@@ -120,7 +120,7 @@ h1, h2, h3 {
 }
 
 .hero h1 span {
-    color: var(--primary-purple);
+    color: var(--primary-action);
 }
 
 .hero p {
@@ -190,7 +190,7 @@ h1, h2, h3 {
 }
 
 .sidebar-menu li.active {
-    background-color: var(--primary-purple);
+    background-color: var(--primary-action);
     color: var(--white);
 }
 
@@ -263,12 +263,12 @@ h1, h2, h3 {
 .stat-value {
     font-size: 2.5rem;
     font-weight: 800;
-    color: var(--primary-blue);
+    color: var(--secondary-action);
     font-family: 'Montserrat Alternates', sans-serif;
 }
 
-.stat-value.purple { color: var(--primary-purple); }
-.stat-value.cyan { color: var(--accent-cyan); }
+.stat-value.purple { color: var(--primary-action); }
+.stat-value.cyan { color: var(--accent-highlight); }
 
 /* Continue Course Card */
 .course-card {
@@ -301,7 +301,7 @@ h1, h2, h3 {
 
 .progress-fill {
     height: 100%;
-    background-color: var(--accent-pink);
+    background-color: var(--accent-bean);
     width: 65%; /* Example progress */
     border-radius: 10px;
 }
@@ -330,7 +330,7 @@ h1, h2, h3 {
 .logo-link {
     font-size: 32px;
     font-weight: 800;
-    color: var(--primary-purple);
+    color: var(--primary-action);
     font-family: 'Montserrat Alternates', sans-serif;
     text-decoration: none;
     margin-bottom: 30px;
@@ -392,7 +392,7 @@ h1, h2, h3 {
 
 /* Glows cyan when the user clicks to type */
 .input-group input:focus {
-    border-color: var(--accent-cyan);
+    border-color: var(--accent-highlight);
     background-color: var(--white);
     box-shadow: 0 0 0 4px rgba(56, 207, 252, 0.15);
 }
@@ -405,7 +405,7 @@ h1, h2, h3 {
 
 .forgot-password {
     font-size: 0.9rem;
-    color: var(--primary-purple);
+    color: var(--primary-action);
     text-decoration: none;
     font-weight: 600;
 }
@@ -428,7 +428,7 @@ h1, h2, h3 {
 }
 
 .auth-footer a {
-    color: var(--primary-purple);
+    color: var(--primary-action);
     font-weight: 800;
     text-decoration: none;
 }
